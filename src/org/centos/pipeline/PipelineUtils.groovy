@@ -1214,7 +1214,7 @@ def skip(String stageName) {
 def obtainLock(String fileLocation, int duration) {
     echo "Currently in obtainLock function"
     def myuuid = sh (returnStdout: true, script: 'uuidgen').trim()
-    def mydir = sh """ \$(dirname "${fileLocation}" """.trim()
+    def mydir = sh """ \$(dirname "${fileLocation}")""".trim()
     echo "Directory is ${mydir}"
 
     sh """
