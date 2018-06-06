@@ -1219,6 +1219,7 @@ def obtainLock(String fileLocation, int duration) {
         (
         flock 9
         currentTime=\$(date +%s)
+        echo \$(dirname "${fileLocation}")
         mkdir -p \$(dirname "${fileLocation}")
         while true ; do
             # Check if lock file exists
