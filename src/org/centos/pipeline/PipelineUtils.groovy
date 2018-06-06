@@ -1233,6 +1233,7 @@ def obtainLock(String fileLocation, int duration) {
             done
             # Now, either lock file is older than duration
             # or the lock is gone, so proceed
+            mkdir -p \$(dirname "${fileLocation}")
             echo "${myuuid}" > "${fileLocation}"
             testuuid=\$(cat "${fileLocation}")
             # If uuid matches, we got the lock
